@@ -11,9 +11,12 @@
   <script src="script.js"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="stylesheet" href="style.css" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 </head>
 <body class="bg-white text-gray-900 font-body-md antialiased selection:bg-gray-100 selection:text-gray-900">
-  <header class="bg-white/95 backdrop-blur-md docked full-width top-0 sticky border-b border-gray-200 shadow-sm shadow-gray-100/50 z-50">
+  <div id="background-effect" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
+  <header class="bg-white/80 backdrop-blur-md docked full-width top-0 sticky border-b border-gray-200 shadow-sm shadow-gray-100/50 z-50 relative">
     <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
       <a class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-gray-900 hover:opacity-70 transition-opacity" href="#">Lucia Lugomba</a>
       <nav class="hidden md:flex gap-8 items-center">
@@ -30,7 +33,7 @@
     </div>
   </header>
   <main>
-    <section class="py-section-padding px-gutter max-w-container-max mx-auto min-h-[80vh] flex flex-col md:flex-row items-center gap-12 relative overflow-hidden" id="home">
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto min-h-[80vh] flex flex-col md:flex-row items-center gap-12 relative overflow-hidden z-10" id="home">
       <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[80%] rounded-full bg-gray-100 blur-[120px] -z-10"></div>
       <div class="flex-1 space-y-stack-gap text-center md:text-left z-10">
         <div class="inline-flex items-center gap-2 bg-gray-100 border border-gray-300 px-4 py-1.5 rounded-full mb-4">
@@ -40,46 +43,46 @@
         <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-gray-900">Hi, I'm <br /><span class="text-gray-600">Lucia Lugomba</span></h1>
         <p class="font-body-lg text-body-lg text-gray-600 max-w-2xl mx-auto md:mx-0 leading-relaxed">A second-year International Service Management student at Tzu Chi University with a profound passion for Information Technology. Bridging the gap between global service strategies and technical innovation.</p>
         <div class="pt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-          <button class="bg-primary text-on-primary font-body-md text-body-md px-8 py-3 rounded-lg hover:bg-primary-fixed-variant transition-colors shadow-md flex items-center gap-2 group">Explore My Work <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span></button>
-          <button class="border-2 border-secondary text-secondary font-body-md text-body-md px-8 py-3 rounded-lg hover:bg-secondary/5 transition-colors flex items-center gap-2">Get in Touch</button>
+          <button class="bg-gray-900 text-white font-body-md text-body-md px-8 py-3 rounded-lg hover:bg-gray-800 transition-all shadow-sm flex items-center gap-2 group hover:shadow-md">Explore My Work <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span></button>
+          <button class="border-2 border-gray-900 text-gray-900 font-body-md text-body-md px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors flex items-center gap-2">Get in Touch</button>
         </div>
       </div>
       <div class="flex-1 w-full max-w-md relative">
-        <div class="glass-panel p-4 rounded-2xl relative z-10">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container">
+        <div class="p-4 rounded-2xl relative z-10">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden bg-gray-100 shadow-sm">
             <img alt="Lucia Lugomba Portrait" class="w-full h-full object-cover object-center" src="public/images/portrait.jpg" />
           </div>
-          <div class="absolute -bottom-6 -left-6 bg-surface p-4 rounded-xl shadow-lg border border-outline-variant/20 hidden md:flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined" data-icon="code">code</span></div>
+          <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-md border border-gray-200 hidden md:flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-600"><span class="material-symbols-outlined" data-icon="code">code</span></div>
             <div>
-              <p class="font-label-sm text-label-sm text-on-surface-variant">Specialization</p>
-              <p class="font-headline-md text-[18px] text-primary">IT &amp; Service Mgmt</p>
+              <p class="font-label-sm text-label-sm text-gray-500">Specialization</p>
+              <p class="font-headline-md text-[18px] text-gray-900">IT &amp; Service Mgmt</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="py-12 bg-surface-container-low border-y border-outline-variant/10">
+    <section class="py-12 bg-gray-50 border-y border-gray-200">
       <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-panel p-6 rounded-xl flex items-start gap-4">
-          <span class="material-symbols-outlined text-secondary text-3xl" data-icon="school">school</span>
+        <div class="p-6 rounded-xl flex items-start gap-4 bg-white border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all">
+          <span class="material-symbols-outlined text-gray-900 text-3xl" data-icon="school">school</span>
           <div>
-            <h3 class="font-headline-md text-[20px] text-primary mb-1">Year 2 Student</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant text-sm">International Service Management, Tzu Chi University</p>
+            <h3 class="font-headline-md text-[20px] text-gray-900 mb-1">Year 2 Student</h3>
+            <p class="font-body-md text-body-md text-gray-600 text-sm">International Service Management, Tzu Chi University</p>
           </div>
         </div>
-        <div class="glass-panel p-6 rounded-xl flex items-start gap-4">
-          <span class="material-symbols-outlined text-secondary text-3xl" data-icon="computer">computer</span>
+        <div class="p-6 rounded-xl flex items-start gap-4 bg-white border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all">
+          <span class="material-symbols-outlined text-gray-900 text-3xl" data-icon="computer">computer</span>
           <div>
-            <h3 class="font-headline-md text-[20px] text-primary mb-1">IT Enthusiast</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Passionate about leveraging technology for service optimization.</p>
+            <h3 class="font-headline-md text-[20px] text-gray-900 mb-1">IT Enthusiast</h3>
+            <p class="font-body-md text-body-md text-gray-600 text-sm">Passionate about leveraging technology for service optimization.</p>
           </div>
         </div>
-        <div class="glass-panel p-6 rounded-xl flex items-start gap-4">
-          <span class="material-symbols-outlined text-secondary text-3xl" data-icon="public">public</span>
+        <div class="p-6 rounded-xl flex items-start gap-4 bg-white border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all">
+          <span class="material-symbols-outlined text-gray-900 text-3xl" data-icon="public">public</span>
           <div>
-            <h3 class="font-headline-md text-[20px] text-primary mb-1">Global Perspective</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Originating from Malawi, adapting to international tech landscapes.</p>
+            <h3 class="font-headline-md text-[20px] text-gray-900 mb-1">Global Perspective</h3>
+            <p class="font-body-md text-body-md text-gray-600 text-sm">Originating from Malawi, adapting to international tech landscapes.</p>
           </div>
         </div>
       </div>
@@ -87,43 +90,134 @@
     <section class="py-section-padding px-gutter max-w-container-max mx-auto" id="about">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-5 order-2 lg:order-1 relative">
-          <div class="absolute inset-0 bg-primary/5 transform -rotate-3 rounded-2xl"></div>
+          <div class="absolute inset-0 bg-gray-100 transform -rotate-3 rounded-2xl"></div>
           <img alt="Workspace" class="rounded-2xl relative z-10 w-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuKD7CrXLOfA_WDN_NoTJli7bEGgKy-4Uy5e2pv1kxnZhHPCA9O6W4gpRGG5e61iBR1wVyitIqO3i1TT7UV4RiPY6jA5nzSXeFuwfBycgNjltL9FZCjvKJsDogFskk7p-7ylsyYdcau9mArJ0oSkYZVPavUJLUUnW85gDSNnTa3zoEfRpxt_KlzY2skBu58d1C9G0I_YUsyXs3aJL5pvbz0Y-ueMUfN7YobTnsuhz3mk1rVfbIMGIXQA" style="height: 500px;" />
         </div>
         <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
-          <div class="inline-block bg-primary/10 text-primary font-label-sm text-label-sm px-3 py-1 rounded-full uppercase tracking-wider mb-2">About Me</div>
-          <h2 class="font-headline-md text-[32px] md:text-[40px] text-primary leading-tight">Bridging Cultural Insights with Technological Solutions.</h2>
-          <div class="prose prose-lg text-on-surface-variant font-body-lg text-body-lg space-y-4">
+          <div class="inline-block bg-gray-100 text-gray-900 font-label-sm text-label-sm px-3 py-1 rounded-full uppercase tracking-wider mb-2">About Me</div>
+          <h2 class="font-headline-md text-[32px] md:text-[40px] text-gray-900 leading-tight">Bridging Cultural Insights with Technological Solutions.</h2>
+          <div class="prose prose-lg text-gray-600 font-body-lg text-body-lg space-y-4">
             <p>Born on August 2, 2005, in the vibrant heart of Malawi, my journey has been driven by a curiosity to understand how systems work—both social and technical. Relocating for my studies has broadened my perspective, allowing me to view problems through a multicultural lens.</p>
             <p>Currently navigating my second year in International Service Management at Tzu Chi University, I have discovered a deep-seated passion for Information Technology. I firmly believe that the future of effective service management lies in digital transformation and robust IT infrastructures.</p>
           </div>
           <div class="pt-6 grid grid-cols-2 gap-4">
-            <div class="border-l-2 border-secondary pl-4">
-              <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Origin</p>
-              <p class="font-headline-md text-[18px] text-primary">Malawi</p>
+            <div class="border-l-2 border-gray-300 pl-4">
+              <p class="font-label-sm text-label-sm text-gray-500 uppercase mb-1">Origin</p>
+              <p class="font-headline-md text-[18px] text-gray-900">Malawi</p>
             </div>
-            <div class="border-l-2 border-secondary pl-4">
-              <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">DOB</p>
-              <p class="font-headline-md text-[18px] text-primary">August 2, 2005</p>
+            <div class="border-l-2 border-gray-300 pl-4">
+              <p class="font-label-sm text-label-sm text-gray-500 uppercase mb-1">DOB</p>
+              <p class="font-headline-md text-[18px] text-gray-900">August 2, 2005</p>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="bg-surface-container-low dark:bg-surface-container-lowest full-width py-stack-gap px-gutter border-t border-outline-variant/20 mt-auto">
+  <footer class="bg-white full-width py-stack-gap px-gutter border-t border-gray-200 mt-auto">
     <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex items-center gap-2">
-        <span class="font-display-lg-mobile md:font-display-lg text-[24px] md:text-[24px] text-primary font-bold tracking-tight">Lucia Lugomba</span>
+        <span class="font-display-lg-mobile md:font-display-lg text-[24px] md:text-[24px] text-gray-900 font-bold tracking-tight">Lucia Lugomba</span>
       </div>
-      <div class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Lucia Lugomba. All rights reserved. | <a class="hover:text-secondary transition-colors" href="tel:+886978984860">+886978984860</a></div>
+      <div class="font-body-md text-body-md text-gray-600 text-center md:text-left">© 2024 Lucia Lugomba. All rights reserved. | <a class="hover:text-gray-900 transition-colors" href="tel:+886978984860">+886978984860</a></div>
       <nav class="flex gap-4">
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Instagram</a>
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Facebook</a>
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">LinkedIn</a>
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">GitHub</a>
+        <a class="font-body-md text-body-md text-gray-600 hover:text-gray-900 transition-colors" href="#">Instagram</a>
+        <a class="font-body-md text-body-md text-gray-600 hover:text-gray-900 transition-colors" href="#">Facebook</a>
+        <a class="font-body-md text-body-md text-gray-600 hover:text-gray-900 transition-colors" href="#">LinkedIn</a>
+        <a class="font-body-md text-body-md text-gray-600 hover:text-gray-900 transition-colors" href="#">GitHub</a>
       </nav>
     </div>
   </footer>
+  <script>
+    // Create canvas for ColorBends background effect
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    document.getElementById('background-effect').appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let animationId = null;
+    let time = 0;
+
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // ColorBends animation parameters
+    const params = {
+      color: '#7c3aed',
+      speed: 0.2,
+      frequency: 1.0,
+      noise: 0.15,
+      bandWidth: 0.14,
+      rotation: 90,
+      fadeTop: 0.75,
+      iterations: 1,
+      intensity: 1.3
+    };
+
+    // Convert hex color to RGB
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : { r: 168, g: 85, b: 247 };
+    }
+
+    // Perlin-like noise function
+    function noise(x, y) {
+      return Math.sin(x * 0.1) * Math.cos(y * 0.1) * Math.sin((x + y) * 0.05);
+    }
+
+    function animate() {
+      time += params.speed * 0.05;
+      
+      // Clear canvas
+      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const rgb = hexToRgb(params.color);
+      
+      // Draw ColorBends waves
+      for (let iteration = 0; iteration < params.iterations; iteration++) {
+        ctx.beginPath();
+        
+        for (let x = 0; x < canvas.width; x += 2) {
+          const normalizedX = (x / canvas.width) * params.frequency;
+          const waveHeight = Math.sin(normalizedX * Math.PI * 2 + time) * 50;
+          const noiseVal = noise(x + time * 10, iteration * 100) * params.noise * 100;
+          
+          const y = canvas.height * 0.3 + waveHeight + noiseVal;
+          
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        
+        ctx.lineTo(canvas.width, canvas.height);
+        ctx.lineTo(0, canvas.height);
+        ctx.closePath();
+        
+        const alpha = (params.intensity * (1 - iteration / params.iterations)) * 0.15;
+        ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+        ctx.fill();
+      }
+
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
