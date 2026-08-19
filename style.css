@@ -1,4 +1,4 @@
-url(../WhatsApp Image 2026-08-10 at 20.28.16.jpeg).glass-panel {
+.glass-panel {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -104,4 +104,44 @@ main {
 section {
     position: relative;
     z-index: 10;
+}
+
+/* Slow, low-contrast motion keeps the purple atmosphere alive without competing with the content. */
+.purple-breathe {
+    animation: purpleBreathe 9s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.purple-breathe-dot {
+    animation: purpleBreatheDot 3.2s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(192, 132, 252, 0.45);
+}
+
+@keyframes purpleBreathe {
+    0%, 100% {
+        opacity: 0.82;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.025);
+    }
+}
+
+@keyframes purpleBreatheDot {
+    0%, 100% {
+        opacity: 0.72;
+        box-shadow: 0 0 0 0 rgba(192, 132, 252, 0.4);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 0 6px rgba(192, 132, 252, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .purple-breathe,
+    .purple-breathe-dot {
+        animation: none;
+    }
 }
